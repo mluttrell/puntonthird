@@ -1,10 +1,10 @@
-file { '/puntonthird/logs':
+file { ['/puntonthird/', '/puntonthird/logs']:
     ensure => 'directory',
     owner  => 'root',
     mode   => 'go+w',
 }
   
-file { '/puntonthird/mongodata':
+file { ['/puntonthird/', '/puntonthird/mongodata']:
     ensure => 'directory',
     owner  => 'root',
     mode   => 'go+w',
