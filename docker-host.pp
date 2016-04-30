@@ -1,20 +1,17 @@
 file { '/puntonthird/':
     ensure 	=> 'directory',
     owner  	=> 'root',
-    mode   	=> 'go+w'
 }
 
 file { '/puntonthird/logs':
     ensure => 'directory',
     owner  => 'root',
-    mode   => 'go+w',
 	require => File['/puntonthird/']
 }
   
 file { '/puntonthird/mongodata':
     ensure 	=> 'directory',
     owner  	=> 'root',
-    mode   	=> 'go+w',
 	require => File['/puntonthird/']
 }
 
