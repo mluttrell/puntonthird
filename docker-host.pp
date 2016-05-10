@@ -1,12 +1,10 @@
 file { '/puntonthird/':
     ensure 	=> 'directory',
-    owner  	=> 'root',
     mode   	=> '0755'
 }
   
 file { ['/puntonthird/mongodata', '/puntonthird/logs']:
     ensure 	=> 'directory',
-    owner  	=> 'root',
     mode   	=> '0755',
 	require => File['/puntonthird/']
 }
@@ -28,4 +26,3 @@ mount { 'mongo data mount':
 	options => 'defaults',
 	require => File['/puntonthird/logs']
 }
-
