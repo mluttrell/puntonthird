@@ -12,7 +12,7 @@ file { ['/puntonthird/mongodata', '/puntonthird/logs']:
 mount { 'puntonthird log mount':
 	name 	=> '/puntonthird/logs',
 	ensure 	=> 'mounted',
-	device 	=> 'LABEL=puntonthird-logs',
+	device 	=> 'LABEL=po3-logs',
 	fstype	=> 'ext4',
 	options => 'defaults',
 	require => File['/puntonthird/logs']
@@ -21,7 +21,7 @@ mount { 'puntonthird log mount':
 mount { 'mongo data mount':
 	name 	=> '/puntonthird/mongodata',
 	ensure 	=> 'mounted',
-	device 	=> 'LABEL=puntonthird-mongo',
+	device 	=> 'LABEL=po3-mongo',
 	fstype	=> 'ext4',
 	options => 'defaults',
 	require => File['/puntonthird/logs']
