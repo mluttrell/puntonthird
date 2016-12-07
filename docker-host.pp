@@ -12,7 +12,7 @@ file { ['/puntonthird/mongodata', '/puntonthird/logs']:
 mount { 'puntonthird log mount':
 	name 	=> '/puntonthird/logs',
 	ensure 	=> 'mounted',
-	device 	=> '/dev/sdc1',
+	device 	=> 'UUID=[LogsUUID]',
 	fstype	=> 'ext4',
 	options => 'defaults',
 	require => File['/puntonthird/logs']
@@ -21,7 +21,7 @@ mount { 'puntonthird log mount':
 mount { 'mongo data mount':
 	name 	=> '/puntonthird/mongodata',
 	ensure 	=> 'mounted',
-	device 	=> '/dev/sdd1',
+	device 	=> 'UUID=[MongoUUID]',
 	fstype	=> 'ext4',
 	options => 'defaults',
 	require => File['/puntonthird/logs']
