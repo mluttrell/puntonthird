@@ -1,4 +1,4 @@
-class puntonthird::mounts inherits puntonthird {
+class puntonthird::mounts ($name) {
 
   file { ['/puntonthird/',
           '/puntonthird/$name']:
