@@ -1,31 +1,17 @@
-class puntonthird::files inherits puntonthird {
+class puntonthird::mounts inherits puntonthird {
 
-  file { '/puntonthird/':
+  file { ['/puntonthird/',
+          '/puntonthird/$name']:
     ensure 	=> 'directory',
     mode   	=> '0755'
   }
-    
-  file { ['/puntonthird/mongodata', '/puntonthird/logs']:
-    ensure 	=> 'directory',
-    mode   	=> '0755',
-    require => File['/puntonthird/']
-  }
 
-  mount { 'puntonthird log mount':
-    name 	=> '/puntonthird/logs',
+  mount { 'data mount':
+    name 	=> '/puntonthird/$name',
     ensure 	=> 'mounted',
-    device 	=> 'LABEL=po3-logs',
+    device 	=> 'LABEL=po3-$name',
     fstype	=> 'ext4',
     options => 'defaults',
-    require => File['/puntonthird/logs']
-  }
-
-  mount { 'mongo data mount':
-    name 	=> '/puntonthird/mongodata',
-    ensure 	=> 'mounted',
-    device 	=> 'LABEL=po3-mongo',
-    fstype	=> 'ext4',
-    options => 'defaults',
-    require => File['/puntonthird/logs']
+    require => File['/puntonthird/$name']
   }
 }

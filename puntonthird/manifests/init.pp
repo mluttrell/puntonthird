@@ -1,4 +1,4 @@
 # manifests/init.pp
-class puntonthird {
-    include puntonthird::files
+class puntonthird ($name) {
+    include puntonthird::mounts
 }
