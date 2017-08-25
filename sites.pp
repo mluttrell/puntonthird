@@ -3,7 +3,7 @@ node default {
     mountname => 'logs',
   }
 
-  puntonthird::mount { 'mongodata':
-    mountname => 'mongodata',
+  puntonthird::mount { 'mongo':
+    mountname => 'mongo',
   }
 }
