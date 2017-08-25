@@ -1,10 +1,6 @@
 define puntonthird::mount ($mountname) {
 
-  file { "parent dir for ${name}":
-    path => '/puntonthird/',
-    ensure => 'directory',
-    mode => '0755'
-  }
+  include puntonthird::parentdir
 
   file { "/puntonthird/${mountname}":
     ensure 	=> 'directory',
