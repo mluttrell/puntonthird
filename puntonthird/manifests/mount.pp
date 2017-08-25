@@ -1,4 +1,4 @@
-class puntonthird::mounts ($mountname) {
+define puntonthird::mount (String $mountname) {
 
   file { ['/puntonthird/',
           "/puntonthird/${mountname}"]:
@@ -6,7 +6,7 @@ class puntonthird::mounts ($mountname) {
     mode   	=> '0755'
   }
 
-  mount { 'data mount':
+  mount { $title:
     name 	=> "/puntonthird/${mountname}",
     ensure 	=> 'mounted',
     device 	=> "LABEL=po3-${mountname}",
