@@ -1,7 +1,12 @@
 define puntonthird::mount ($mountname) {
 
-  file { ['/puntonthird/',
-          "/puntonthird/${mountname}"]:
+  file { "parent dir for ${name}":
+    path => '/puntonthird/',
+    ensure => 'directory',
+    mode => '0755'
+  }
+
+  file { "/puntonthird/${mountname}":
     ensure 	=> 'directory',
     mode   	=> '0755'
   }
