@@ -4,6 +4,6 @@ node default {
   }
 
   puntonthird::mount { 'mongodata':
-    mountnamme => 'mongodata',
+    mountname => 'mongodata',
   }
 }
