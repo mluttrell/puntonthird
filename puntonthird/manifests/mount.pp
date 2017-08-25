@@ -1,4 +1,4 @@
-define puntonthird::mount (String $mountname) {
+define puntonthird::mount ($mountname) {
 
   file { ['/puntonthird/',
           "/puntonthird/${mountname}"]:
