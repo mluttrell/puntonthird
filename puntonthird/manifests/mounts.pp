@@ -1,17 +1,17 @@
 class puntonthird::mounts ($mountname) {
 
   file { ['/puntonthird/',
-          '/puntonthird/$mountname']:
+          '/puntonthird/${mountname}']:
     ensure 	=> 'directory',
     mode   	=> '0755'
   }
 
   mount { 'data mount':
-    name 	=> '/puntonthird/$mountname',
+    name 	=> '/puntonthird/${mountname}',
     ensure 	=> 'mounted',
-    device 	=> 'LABEL=po3-$mountname',
+    device 	=> 'LABEL=po3-${mountname}',
     fstype	=> 'ext4',
     options => 'defaults',
-    require => File['/puntonthird/$mountname']
+    require => File['/puntonthird/${mountname}']
   }
 }
